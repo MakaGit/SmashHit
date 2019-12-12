@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
+    [SerializeField]
+    private float _speed = 3.0f;
 
     void Update()
     {
-        Vector3 forward = new Vector3(0.0f, 0.0f, 1.0f);
-
-        float speed = 3.0f;
-
-        Vector3 translation = forward * speed * Time.deltaTime;
+        Vector3 translation = Vector3.forward * _speed * Time.deltaTime;
 
         transform.position += translation;
     }
 }
+

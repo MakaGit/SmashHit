@@ -193,7 +193,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.03125, y: 0.02734375, z: -0.03125, w: 0}
+  m_BoundingSphereOverride: {x: 1.148e-41, y: 0, z: 2.3509887e-38, w: -4.337338e-19}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -332,7 +332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -380,10 +380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501a1d4493f27824588f98d4dc12f1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraSpeed: 2
+  CameraSpeed: 1
   ChunkList:
-  - {fileID: 1000966938517584340, guid: 26d22e653ba146e4fbba94a1b6be5d81, type: 3}
-  - {fileID: 4163609892512856276, guid: f3130c2a954494243b1c9938861e328f, type: 3}
+  - {fileID: 2410120295855587321, guid: 26d22e653ba146e4fbba94a1b6be5d81, type: 3}
+  - {fileID: -701705310439267272, guid: f3130c2a954494243b1c9938861e328f, type: 3}
+  TargetPrefabs:
+  - {fileID: 6140125197100088762, guid: 55f62208b64550543b5c46c903b48d04, type: 3}
+  - {fileID: 844189882740371362, guid: ef90e8fbef4d899498dbc01286746ec3, type: 3}
 --- !u!4 &1783932110
 Transform:
   m_ObjectHideFlags: 0

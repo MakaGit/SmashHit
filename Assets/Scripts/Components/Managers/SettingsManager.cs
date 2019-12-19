@@ -9,7 +9,9 @@ public class SettingsManager : MonoBehaviour
     [SerializeField]
     public float CameraSpeed = 2.0f;
     [SerializeField]
-    public List<GameObject> ChunkList = null; 
+    public List<Chunk> ChunkList = null;
+    [SerializeField]
+    public List<GameObject> TargetPrefabs = null;
 
     private void Start()
     {

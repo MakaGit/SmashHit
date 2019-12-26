@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMover : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 3.0f;
+    private float _speed = 1.0f;
 
     void Update()
     {

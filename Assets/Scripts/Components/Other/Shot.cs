@@ -31,9 +31,6 @@ public class Shot : MonoBehaviour
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         sphere.transform.position = _camera.transform.position;
 
-        Vector3 translation = Vector3.forward * 3 * Time.deltaTime;
-
-        transform.position += translation;
 
         yield return new WaitForSeconds(3);
 

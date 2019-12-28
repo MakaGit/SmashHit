@@ -9,7 +9,6 @@ public class CameraNextChunkGeneration : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("qweqwe");
         EventTriggerEntered?.Invoke();
     }
 }

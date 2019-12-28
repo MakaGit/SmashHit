@@ -11,7 +11,11 @@ public class GameplayManager : MonoBehaviour
 
     void Start()
     {
-        SpawnNextChunk();
+        var settingsManager = SettingsManager.Instance;
+        for (int i = 0; i < settingsManager.NumberOfFrontChunks; ++i)
+        {
+            SpawnNextChunk();
+        }  
     }
 
     private void OnEnable()
@@ -29,7 +33,7 @@ public class GameplayManager : MonoBehaviour
         var settingsManager = SettingsManager.Instance;
         int index = Random.Range(0, settingsManager.ChunkList.Count);
         var chunkPrefab = settingsManager.ChunkList[index];
-        var newChunk = Instantiate(chunkPrefab);
+        Chunk newChunk = Instantiate(chunkPrefab);
 
         if (_currentChunk != null)
         {

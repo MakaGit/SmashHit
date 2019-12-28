@@ -12,6 +12,11 @@ public class SettingsManager : MonoBehaviour
     public List<Chunk> ChunkList = null;
     [SerializeField]
     public List<GameObject> TargetPrefabs = null;
+    [SerializeField]
+    public int NumberOfBackChunks = 3;
+    [SerializeField]
+    public int NumberOfFrontChunks = 10;
+
 
     private void Start()
     {

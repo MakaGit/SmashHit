@@ -28,12 +28,9 @@ public class Shot : MonoBehaviour
 
     private IEnumerator SphereIndicator(Vector3 pos)
     {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.position = _camera.transform.position;
 
 
         yield return new WaitForSeconds(3);
 
-        Destroy(sphere);
     }
 }

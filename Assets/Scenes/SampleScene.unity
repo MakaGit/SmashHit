@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -311,9 +311,9 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   - component: {fileID: 963194232}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -399,7 +399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254d95f1261b3f34099bd36f8b978940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,9 +408,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd308f9c6c880d4293ea6b7ec731b68, type: 3}
+  m_Script: {fileID: 11500000, guid: 4864a5297dcbee542b1c2ac47342e07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 3489604606112784750, guid: a5e870830553b894598aeb0f5b397128, type: 3}
+  speed: 10
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501a1d4493f27824588f98d4dc12f1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraSpeed: 1
+  CameraSpeed: 3
   ChunkList:
   - {fileID: 2410120295855587321, guid: 26d22e653ba146e4fbba94a1b6be5d81, type: 3}
   - {fileID: 91936810621528862, guid: 2cb67c5a0e5162f4b913a03c186ae5b6, type: 3}
@@ -477,6 +478,8 @@ MonoBehaviour:
   TargetPrefabs:
   - {fileID: 6140125197100088762, guid: 55f62208b64550543b5c46c903b48d04, type: 3}
   - {fileID: 844189882740371362, guid: ef90e8fbef4d899498dbc01286746ec3, type: 3}
+  NumberOfBackChunks: 2
+  NumberOfFrontChunks: 3
 --- !u!4 &1783932110
 Transform:
   m_ObjectHideFlags: 0

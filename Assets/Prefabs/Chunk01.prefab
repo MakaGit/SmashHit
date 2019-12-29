@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3975425747423535664}
   - component: {fileID: 2410120295855587321}
+  - component: {fileID: 7860434565949180176}
   m_Layer: 0
   m_Name: Chunk01
   m_TagString: Untagged
@@ -56,6 +57,19 @@ MonoBehaviour:
   - {fileID: 5824626588868701029}
   - {fileID: 6550665259890001535}
   _nextChunkSpawnPoint: {fileID: 8528002189322049095}
+--- !u!65 &7860434565949180176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000966938517584340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!1 &1656990015386913759
 GameObject:
   m_ObjectHideFlags: 0

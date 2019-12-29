@@ -9,6 +9,8 @@ public class GameplayManager : MonoBehaviour
 
     private Chunk _currentChunk = null;
 
+    private Queue<Chunk> _spawnedChunks = new Queue<Chunk>();
+
     void Start()
     {
         var settingsManager = SettingsManager.Instance;
@@ -35,9 +37,9 @@ public class GameplayManager : MonoBehaviour
         var chunkPrefab = settingsManager.ChunkList[index];
         Chunk newChunk = Instantiate(chunkPrefab);
 
-        if (_currentChunk != null)
+        if (_spawnedChunks.Count > 0)
         {
-            newChunk.transform.position = _currentChunk.NextChunkSpawnPoint.position;
+            newChunk.transform.position =_currentChunk.NextChunkSpawnPoint.position;
             newChunk.transform.rotation = _currentChunk.NextChunkSpawnPoint.rotation;
         }
         else
@@ -47,6 +49,13 @@ public class GameplayManager : MonoBehaviour
         }
 
         _currentChunk = newChunk;
+        _spawnedChunks.Enqueue(newChunk);
+
+        if (_spawnedChunks.Count > settingsManager.NumberOfFrontChunks + settingsManager.NumberOfBackChunks)
+        {
+            var chunkToDelete = _spawnedChunks.Dequeue();
+            Destroy(chunkToDelete.gameObject);
+        }
     }
 
     private void OnCameraEnteredNextChunkGenerationTrigger()

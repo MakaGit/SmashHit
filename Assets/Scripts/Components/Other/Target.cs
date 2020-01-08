@@ -8,6 +8,8 @@ public class Target : MonoBehaviour
     private GameObject _nonDestroyedDummy = null;
     [SerializeField]
     private GameObject _destroyedDummy = null;
+    [SerializeField]
+    private int _score = 1;
 
     private bool _isDestroyed = false;
 
@@ -24,14 +26,16 @@ public class Target : MonoBehaviour
             return;
         }
 
+        ScoreManager.Instance.ModifyScore(_score);
+
         _nonDestroyedDummy.SetActive(false);
         _destroyedDummy.SetActive(true);
 
-        //var rigidbodies = _destroyedDummy.GetComponentsInChildren<Rigidbody>();
-        //foreach (var body in rigidbodies)
-        //{
-        //    body.AddExplosionForce(400.0f, collision.contacts[0].point, 5.0f);
-        //}
+        var rigidbodies = _destroyedDummy.GetComponentsInChildren<Rigidbody>();
+        foreach (var body in rigidbodies)
+        {
+            body.AddExplosionForce(400.0f, collision.contacts[0].point, 5.0f);
+        }
 
         _isDestroyed = true;
     }

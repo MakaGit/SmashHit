@@ -16,6 +16,8 @@ public class SettingsManager : MonoBehaviour
     public int NumberOfBackChunks = 3;
     [SerializeField]
     public int NumberOfFrontChunks = 10;
+    [SerializeField]
+    public float BallThrowingSpeed = 1.0f;
 
 
     private void Start()

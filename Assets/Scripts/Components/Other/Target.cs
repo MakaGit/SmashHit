@@ -9,15 +9,30 @@ public class Target : MonoBehaviour
     [SerializeField]
     private GameObject _destroyedDummy = null;
 
+    private bool _isDestroyed = false;
+
     private void Awake()
     {
         _nonDestroyedDummy.SetActive(true);
         _destroyedDummy.SetActive(false);
     }
 
-    private void OnVollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
+        if (_isDestroyed)
+        {
+            return;
+        }
+
         _nonDestroyedDummy.SetActive(false);
         _destroyedDummy.SetActive(true);
+
+        //var rigidbodies = _destroyedDummy.GetComponentsInChildren<Rigidbody>();
+        //foreach (var body in rigidbodies)
+        //{
+        //    body.AddExplosionForce(400.0f, collision.contacts[0].point, 5.0f);
+        //}
+
+        _isDestroyed = true;
     }
 }

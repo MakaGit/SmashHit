@@ -6,12 +6,11 @@ public class BallThrowing : MonoBehaviour
 {
 
     public Rigidbody Ball;
-    public float speed = 10f;
 
     private void ThrowBall(Vector3 direction)
     {
-        Rigidbody BallClone = (Rigidbody)Instantiate(Ball, transform.position + transform.position.normalized, transform.rotation);
-        BallClone.velocity = direction * 3 * speed;
+        Rigidbody BallClone = (Rigidbody)Instantiate(Ball, transform.position + new Vector3(0, 0, 1), transform.rotation);
+        BallClone.velocity = direction * SettingsManager.Instance.BallThrowingSpeed;
     }
 
     void Update()
@@ -19,12 +18,12 @@ public class BallThrowing : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //RaycastHit hit;
-            //if (Physics.Raycast(ray, out hit))
-            //{
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
                 ThrowBall(ray.direction);
                 
-            //}
+            }
         }
     }
 }

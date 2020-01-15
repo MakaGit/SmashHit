@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance = null;
+    public static ScoreManager Instance;
 
     public event Action<int> EventCurrentScoreChanged;
 

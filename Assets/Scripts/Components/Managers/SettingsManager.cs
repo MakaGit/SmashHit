@@ -13,6 +13,10 @@ public class SettingsManager : MonoBehaviour
     [SerializeField]
     public List<GameObject> TargetPrefabs = null;
     [SerializeField]
+    public List<GameObject> WallPrefabs = null;
+    [SerializeField]
+    public List<GameObject> ItemPrefabs = null;
+    [SerializeField]
     public int NumberOfBackChunks = 3;
     [SerializeField]
     public int NumberOfFrontChunks = 10;

@@ -11,6 +11,7 @@ public class GameplayManager : MonoBehaviour
 
     private Queue<Chunk> _spawnedChunks = new Queue<Chunk>();
 
+
     void Start()
     {
         var settingsManager = SettingsManager.Instance;
@@ -62,5 +63,4 @@ public class GameplayManager : MonoBehaviour
     {
         SpawnNextChunk();
     }
-
 }

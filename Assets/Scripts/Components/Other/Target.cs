@@ -10,6 +10,8 @@ public class Target : MonoBehaviour
     private GameObject _destroyedDummy = null;
     [SerializeField]
     private int _score = 1;
+    [SerializeField]
+    private int health = 2;
 
     private bool _isDestroyed = false;
 
@@ -26,17 +28,26 @@ public class Target : MonoBehaviour
             return;
         }
 
-        ScoreManager.Instance.ModifyScore(_score);
-
-        _nonDestroyedDummy.SetActive(false);
-        _destroyedDummy.SetActive(true);
-
-        var rigidbodies = _destroyedDummy.GetComponentsInChildren<Rigidbody>();
-        foreach (var body in rigidbodies)
+        if (collision.collider.CompareTag("PlayerProjectile"))
         {
-            body.AddExplosionForce(400.0f, collision.contacts[0].point, 5.0f);
-        }
+            health--;
 
-        _isDestroyed = true;
+            if (health == 0)
+            {
+                ScoreManager.Instance.ModifyScore(_score);
+
+                _nonDestroyedDummy.SetActive(false);
+                _destroyedDummy.SetActive(true);
+
+                var rigidbodies = _destroyedDummy.GetComponentsInChildren<Rigidbody>();
+                foreach (var body in rigidbodies)
+                {
+                    body.AddExplosionForce(400.0f, collision.contacts[0].point, 5.0f);
+                }
+
+                _isDestroyed = true;
+                Destroy(_nonDestroyedDummy);
+            }
+        }
     }
 }
